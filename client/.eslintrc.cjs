@@ -34,6 +34,7 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
+    '@typescript-eslint/await-thenable': 'off',
   },
   ignorePatterns: ['.eslintrc.cjs', 'vite.config.ts', 'vitest.config.ts'],
 }
