@@ -13,6 +13,6 @@ export const startMockBrowserIfEnable = () => {
 
   worker.start({
     onUnhandledRequest: 'bypass',
-    quiet: true,
+    // quiet: true,
   })
 }

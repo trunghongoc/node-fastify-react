@@ -5,9 +5,6 @@ test('has title', async ({ page }) => {
 
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle(/Playwright/)
-
-  // const screenshot = await page.screenshot()
-  // await testInfo.attach('screenshot', { body: screenshot, contentType: 'image/png' });
 })
 
 test('get started link', async ({ page }) => {
@@ -18,6 +15,4 @@ test('get started link', async ({ page }) => {
 
   // Expects the URL to contain intro.
   await expect(page).toHaveURL(/.*intro/)
-
-  // const screenshot = await page.screenshot()
 })
