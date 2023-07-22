@@ -8,14 +8,16 @@ import { store, persistor } from '@/store'
 
 import { startMockBrowserIfEnable } from '@/msw/startMockBrowserIfEnable'
 
-startMockBrowserIfEnable()
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <App />
-      </PersistGate>
-    </Provider>
-  </React.StrictMode>,
-)
+new Promise((resolve) => {
+  resolve(startMockBrowserIfEnable())
+}).then(() => {
+  ReactDOM.createRoot(document.getElementById('root')!).render(
+    <React.StrictMode>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <App />
+        </PersistGate>
+      </Provider>
+    </React.StrictMode>,
+  )
+})

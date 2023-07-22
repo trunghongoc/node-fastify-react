@@ -10,13 +10,11 @@ module.exports = (server) => {
     preCompressed: true,
   });
 
-  /*
   server.register(cors, {
     origin: true,
     methods: ["GET"],
     maxAge: 3600, // 1 hour
   });
-  */
 
   server.setNotFoundHandler((req, res) => {
     res.sendFile("index.html");
