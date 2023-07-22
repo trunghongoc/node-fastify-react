@@ -6,9 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev:node-server": "env-cmd -f .env.dev node server",
+    "start:dev:node-server-express": "env-cmd -f .env.dev node server-express",
     "start:prod:node-server": "env-cmd -f .env.prod node server",
     "start:dev:ui-server": "cd client && npm run dev",
     "start:dev": "concurrently \"rm -rf dist\" \"npm run start:dev:node-server\" \"npm run start:dev:ui-server\"",
+    "start:dev-express": "concurrently \"rm -rf dist\" \"npm run start:dev:node-server-express\" \"npm run start:dev:ui-server\"",
     "start:prod": "concurrently \"npm run start:prod:node-server\"",
     "build": "(cd client && npm run build)"
   },
@@ -18,7 +20,10 @@
   "dependencies": {
     "@fastify/cors": "^8.3.0",
     "@fastify/static": "^6.10.2",
-    "fastify": "^4.20.0"
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "fastify": "^4.20.0",
+    "http-proxy-middleware": "^2.0.6"
   },
   "devDependencies": {
     "@fastify/http-proxy": "^9.2.1",

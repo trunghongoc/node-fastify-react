@@ -11,8 +11,12 @@ app.use(express.static("dist"));
 if (ENV.APP_ENV === "development") {
   app.use(
     cors({
-      origin: ["http://localhost", "http://localhost:3000"],
-      // origin: "*",
+      // origin: [
+      //   "http://localhost",
+      //   "http://localhost:3000",
+      //   "http://localhost:6006",
+      // ],
+      origin: "*",
     })
   );
 
