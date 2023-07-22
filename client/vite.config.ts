@@ -14,20 +14,16 @@ export default defineConfig({
   },
   build: {
     outDir: '../dist',
-    // rollupOptions: {
-    //   output: {
-    // assetFileNames: (assetInfo) => {
-    //   return `public/assets/[name]-[hash][extname]`;
-    // },
-    // chunkFileNames: "public/assets/js/[name]-[hash].js",
-    // entryFileNames: "public/assets/js/[name]-[hash].js",
-    // dir: "public",
-    //   },
-    // },
   },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
+  // test: {
+  //   environment: 'jsdom',
+  //   setupFiles: ['./tests/setup.ts'],
+  //   testMatch: ['./src/**/*.test.tsx'],
+  //   globals: true,
+  // },
 })
