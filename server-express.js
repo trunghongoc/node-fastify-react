@@ -1,6 +1,8 @@
-// npm i -s express cors http-proxy-middleware
+// npm i -s express cors
+// npm i -D http-proxy-middleware
 const express = require("express");
 const cors = require("cors");
+const axios = require("axios");
 const { createProxyMiddleware } = require("http-proxy-middleware");
 const ENV = require("./env");
 const app = express();
@@ -20,6 +22,20 @@ if (ENV.APP_ENV === "development") {
     })
   );
 
+  app.use(async (req, res, next) => {
+    next();
+  });
+
+  app.get("/get-necessaries", async (req, res) => {
+    const userJsonPlaceholder = await axios.get(
+      "https://jsonplaceholder.typicode.com/users/3"
+    );
+
+    res.send({
+      user: userJsonPlaceholder.data,
+    });
+  });
+
   app.get("/test-url", (req, res) => {
     res.send({
       message: "This is the test API from node server",
@@ -34,11 +50,10 @@ if (ENV.APP_ENV === "development") {
       changeOrigin: false,
     })
   );
-  console.log("=====> node dev mode");
 } else {
   app.use(cors());
 
-  app.get("*", (req, res) => {
+  app.get("*", async (req, res) => {
     res.send("index.html");
   });
 }
