@@ -35,6 +35,8 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/await-thenable': 'off',
+    '@typescript-eslint/no-unsafe-member-access': 'off',
+    '@typescript-eslint/no-unsafe-argument': 'off',
   },
-  ignorePatterns: ['.eslintrc.cjs', 'vite.config.ts', 'vitest.config.ts'],
+  ignorePatterns: ['.eslintrc.cjs', 'vite.config.ts', 'vitest.config.ts', 'tests-examples', 'playwright.config.ts'],
 }
