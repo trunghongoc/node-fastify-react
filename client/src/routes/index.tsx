@@ -1,26 +1,33 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from 'react-router-dom'
 
-import { NavigateLinks } from "./../components/NavigateLinks";
+import { NavigateLinks } from './../components/NavigateLinks'
+
+import { Sample } from '@/atoms/Sample'
 
 export const routes = [
   {
-    path: "/",
+    path: '/',
     element: <NavigateLinks />,
     children: [
       {
-        path: "/",
-        element: <div>Hello world!</div>,
+        path: '/',
+        element: (
+          <>
+            <div>Hello world!</div>
+            <Sample />
+          </>
+        ),
       },
       {
-        path: "/about",
+        path: '/about',
         element: <div>About!</div>,
       },
       {
-        path: "/post",
+        path: '/post',
         element: <div>Post!</div>,
       },
     ],
   },
-];
+]
 
-export const router = createBrowserRouter(routes);
+export const router = createBrowserRouter(routes)
