@@ -8,14 +8,11 @@ export const startMockBrowserIfEnable = () => {
     return
   }
 
-  console.log('======> ENV.VITE_ENABLE_MSW:', ENV.VITE_ENABLE_MSW)
-  console.log('======> ENV:', ENV)
-
   // This configures a Service Worker with the given request handlers.
   const worker = setupWorker(...handlers)
 
   worker.start({
     onUnhandledRequest: 'bypass',
-    // quiet: true,
+    quiet: true,
   })
 }

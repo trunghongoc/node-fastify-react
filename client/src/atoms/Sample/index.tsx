@@ -9,8 +9,7 @@ export const Sample = ({ text }: ISampleProps) => {
 
   useEffect(() => {
     http.get('https://jsonplaceholder.typicode.com/todos/2').then((response: AxiosResponse<string>) => {
-      console.log('=====> res.data:', response.data)
-      setMockResponseData(response.data)
+      setMockResponseData(JSON.stringify(response.data))
     })
   }, [])
 

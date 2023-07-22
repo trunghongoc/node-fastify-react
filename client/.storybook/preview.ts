@@ -1,6 +1,14 @@
 import type { Preview } from '@storybook/react'
+import { initialize, mswLoader } from 'msw-storybook-addon'
+
+import { handlers } from './../src/msw/handlers'
 
 import './scss/index.scss'
+
+// Initialize MSW
+initialize({
+  onUnhandledRequest: 'bypass',
+})
 
 const preview: Preview = {
   parameters: {
@@ -22,7 +30,11 @@ const preview: Preview = {
         { name: 'blue', value: '#00f' },
       ],
     },
+    msw: {
+      handlers,
+    },
   },
+  loaders: [mswLoader],
 }
 
 export default preview

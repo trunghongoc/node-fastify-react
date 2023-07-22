@@ -1,5 +1,5 @@
 import { rest } from 'msw'
-import type { RestRequest, RestContext, ResponseFunction } from 'msw'
+import type { RestRequest, ResponseFunction, RestContext } from 'msw'
 
 export const handlers = [
   // Handles a POST /login request
