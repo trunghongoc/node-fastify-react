@@ -1,18 +1,18 @@
-import { useEffect } from "react";
+import { useEffect } from 'react'
 
-import { Link, Outlet } from "react-router-dom";
-import axios from "axios";
+import { Link, Outlet } from 'react-router-dom'
+import axios from 'axios'
 
 export const NavigateLinks = () => {
   const fetchData = () => {
-    axios.get("/test-url").then(() => {
+    axios.get('/test-url').then(() => {
       //
-    });
-  };
+    })
+  }
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
 
   return (
     <>
@@ -22,5 +22,5 @@ export const NavigateLinks = () => {
         <Outlet />
       </div>
     </>
-  );
-};
+  )
+}
