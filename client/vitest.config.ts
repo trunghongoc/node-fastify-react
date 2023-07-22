@@ -13,7 +13,7 @@ export default mergeConfig(
       transformMode: {
         web: [/\.[jt]sx$/],
       },
-      setupFiles: [],
+      setupFiles: ['./src/tests/setup.ts'],
       coverage: {
         reporter: ['text', 'json', 'html'],
       },

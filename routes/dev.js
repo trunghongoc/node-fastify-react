@@ -5,7 +5,7 @@ module.exports = (server) => {
 
   server.get("/test-url", (req, res) => {
     res.send({
-      message: "This is the test API",
+      message: "This is the test API from node server",
       abcd: 123,
     });
   });
